@@ -1,0 +1,467 @@
+{
+  "n_docs": 10,
+  "fields": {
+    "is_invoice": {
+      "correct": 10,
+      "n": 10,
+      "accuracy": 1.0,
+      "correct_invoices_only": 9,
+      "n_invoices": 9
+    },
+    "vendor": {
+      "correct": 10,
+      "n": 10,
+      "accuracy": 1.0,
+      "correct_invoices_only": 9,
+      "n_invoices": 9
+    },
+    "invoice_number": {
+      "correct": 5,
+      "n": 10,
+      "accuracy": 0.5,
+      "correct_invoices_only": 4,
+      "n_invoices": 9
+    },
+    "invoice_date": {
+      "correct": 8,
+      "n": 10,
+      "accuracy": 0.8,
+      "correct_invoices_only": 7,
+      "n_invoices": 9
+    },
+    "currency": {
+      "correct": 10,
+      "n": 10,
+      "accuracy": 1.0,
+      "correct_invoices_only": 9,
+      "n_invoices": 9
+    },
+    "line_items": {
+      "correct": 3,
+      "n": 10,
+      "accuracy": 0.3,
+      "correct_invoices_only": 2,
+      "n_invoices": 9
+    },
+    "tax_total": {
+      "correct": 7,
+      "n": 10,
+      "accuracy": 0.7,
+      "correct_invoices_only": 6,
+      "n_invoices": 9
+    },
+    "total": {
+      "correct": 8,
+      "n": 10,
+      "accuracy": 0.8,
+      "correct_invoices_only": 7,
+      "n_invoices": 9
+    }
+  },
+  "perfect_docs": 2,
+  "line_rows": {
+    "gold": 66,
+    "pred": 66,
+    "matched": 53
+  },
+  "errors": [
+    {
+      "doc": "L01.pdf",
+      "field": "invoice_number",
+      "detail": "got 'NWL-58213', expected 'NWL-88213'"
+    },
+    {
+      "doc": "L02.pdf",
+      "field": "line_items",
+      "detail": "row 3: amount 250.0 != 350.0; row 6: amount 2300.0 != 2200.0"
+    },
+    {
+      "doc": "L04.pdf",
+      "field": "invoice_number",
+      "detail": "got 'MPF-2026-0307', expected 'MPP-2026-0207'"
+    },
+    {
+      "doc": "L04.pdf",
+      "field": "line_items",
+      "detail": "row 6: amount 33000.0 != 35400.0; row 8: amount 4140.0 != 4740.0; row 19: amount 10720.0 != 6420.0; quantity 500 != 300"
+    },
+    {
+      "doc": "L05.pdf",
+      "field": "invoice_number",
+      "detail": "got 'OHS-0261/20', expected 'OHS-0261-26'"
+    },
+    {
+      "doc": "L05.pdf",
+      "field": "invoice_date",
+      "detail": "got '2020-01-27', expected '2026-01-27'"
+    },
+    {
+      "doc": "L05.pdf",
+      "field": "line_items",
+      "detail": "row 3: amount 4260.0 != 9360.0"
+    },
+    {
+      "doc": "L05.pdf",
+      "field": "tax_total",
+      "detail": "got 12788.9, expected 12708.9"
+    },
+    {
+      "doc": "L06.pdf",
+      "field": "line_items",
+      "detail": "row 2: amount 6300.0 != 6500.0; row 4: amount 1440.0 != 1240.0"
+    },
+    {
+      "doc": "L07.pdf",
+      "field": "line_items",
+      "detail": "row 2: amount 350.0 != 850.0"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "invoice_number",
+      "detail": "got 'CFS-4671', expected 'CFS-4471'"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "line_items",
+      "detail": "row 3: amount 6460.0 != 6080.0; row 4: amount 2040.0 != 2870.0; quantity 3 != 7; row 5: amount 4290.0 != 6160.0; description 'Crab claws, kg' vs 'Crab (live), kg' (sim 0.72)"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "tax_total",
+      "detail": "got 4312.5, expected 2032.5"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "total",
+      "detail": "got 42642.5, expected 42682.5"
+    },
+    {
+      "doc": "L10.pdf",
+      "field": "invoice_number",
+      "detail": "got 'MAP/D/20-0312', expected 'MAP/D/09-0312'"
+    },
+    {
+      "doc": "L10.pdf",
+      "field": "invoice_date",
+      "detail": "got '2020-09-03', expected '2026-09-03'"
+    },
+    {
+      "doc": "L10.pdf",
+      "field": "line_items",
+      "detail": "row 5: amount 5560.0 != 5580.0; quantity 20 != 18"
+    },
+    {
+      "doc": "L10.pdf",
+      "field": "tax_total",
+      "detail": "got 19684.0, expected 19689.6"
+    },
+    {
+      "doc": "L10.pdf",
+      "field": "total",
+      "detail": "got 90004.0, expected 90009.6"
+    }
+  ],
+  "review": {
+    "flagged": [
+      "L01.pdf",
+      "L02.pdf",
+      "L03.pdf",
+      "L04.pdf",
+      "L05.pdf",
+      "L06.pdf",
+      "L07.pdf",
+      "L09.pdf",
+      "L10.pdf"
+    ],
+    "wrong": [
+      "L01.pdf",
+      "L02.pdf",
+      "L04.pdf",
+      "L05.pdf",
+      "L06.pdf",
+      "L07.pdf",
+      "L09.pdf",
+      "L10.pdf"
+    ]
+  },
+  "llm": [
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": true,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 404,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 404,
+      "thinking_tokens": 0,
+      "latency_s": 4.1,
+      "billed_output_tokens": 404,
+      "cost_usd": 0.001618,
+      "wall_time_s": 0.01
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": true,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 580,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 580,
+      "thinking_tokens": 0,
+      "latency_s": 2.62,
+      "billed_output_tokens": 580,
+      "cost_usd": 0.002057,
+      "wall_time_s": 0.01
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": true,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 471,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 471,
+      "thinking_tokens": 0,
+      "latency_s": 3.39,
+      "billed_output_tokens": 471,
+      "cost_usd": 0.001785,
+      "wall_time_s": 0.01
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": true,
+          "problems": [
+            "totals_reconcile: line items 269590.00 + tax 32194.80 = 301784.80 vs total 300484.80 (diff +1300.00, tolerance 0.26)"
+          ],
+          "input_tokens": 3117,
+          "output_tokens": 1719,
+          "thinking_tokens": 0
+        },
+        {
+          "round": 2,
+          "cached": true,
+          "problems": [
+            "totals_reconcile: line items 269590.00 + tax 32194.80 = 301784.80 vs total 300484.80 (diff +1300.00, tolerance 0.26)"
+          ],
+          "input_tokens": 4982,
+          "output_tokens": 1776,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 8099,
+      "output_tokens": 3495,
+      "thinking_tokens": 0,
+      "latency_s": 10.9,
+      "billed_output_tokens": 3495,
+      "cost_usd": 0.011167,
+      "wall_time_s": 0.02
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": true,
+          "problems": [
+            "totals_reconcile: line items 65505.00 + tax 12788.90 = 78293.90 vs total 83313.90 (diff -5020.00, tolerance 0.12)"
+          ],
+          "input_tokens": 2025,
+          "output_tokens": 866,
+          "thinking_tokens": 0
+        },
+        {
+          "round": 2,
+          "cached": true,
+          "problems": [
+            "totals_reconcile: line items 65505.00 + tax 12788.90 = 78293.90 vs total 83313.90 (diff -5020.00, tolerance 0.12)"
+          ],
+          "input_tokens": 3034,
+          "output_tokens": 861,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 5059,
+      "output_tokens": 1727,
+      "thinking_tokens": 0,
+      "latency_s": 6.02,
+      "billed_output_tokens": 1727,
+      "cost_usd": 0.005835,
+      "wall_time_s": 0.02
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": true,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 459,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 459,
+      "thinking_tokens": 0,
+      "latency_s": 5.27,
+      "billed_output_tokens": 459,
+      "cost_usd": 0.001755,
+      "wall_time_s": 0.01
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": true,
+          "problems": [
+            "totals_reconcile: line items 3550.00 + tax 334.13 = 3884.13 vs total 4384.13 (diff -500.00, tolerance 0.06)"
+          ],
+          "input_tokens": 2025,
+          "output_tokens": 420,
+          "thinking_tokens": 0
+        },
+        {
+          "round": 2,
+          "cached": true,
+          "problems": [
+            "totals_reconcile: line items 3550.00 + tax 334.13 = 3884.13 vs total 4384.13 (diff -500.00, tolerance 0.06)"
+          ],
+          "input_tokens": 2582,
+          "output_tokens": 468,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 4607,
+      "output_tokens": 888,
+      "thinking_tokens": 0,
+      "latency_s": 5.59,
+      "billed_output_tokens": 888,
+      "cost_usd": 0.003602,
+      "wall_time_s": 0.02
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": true,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 128,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 128,
+      "thinking_tokens": 0,
+      "latency_s": 2.42,
+      "billed_output_tokens": 128,
+      "cost_usd": 0.000927,
+      "wall_time_s": 0.01
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": true,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 564,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 564,
+      "thinking_tokens": 0,
+      "latency_s": 2.41,
+      "billed_output_tokens": 564,
+      "cost_usd": 0.002018,
+      "wall_time_s": 0.0
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": true,
+          "problems": [
+            "totals_reconcile: line items 70300.00 + tax 19684.00 = 89984.00 vs total 90004.00 (diff -20.00, tolerance 0.07)"
+          ],
+          "input_tokens": 1997,
+          "output_tokens": 534,
+          "thinking_tokens": 0
+        },
+        {
+          "round": 2,
+          "cached": true,
+          "problems": [
+            "totals_reconcile: line items 70300.00 + tax 19684.00 = 89984.00 vs total 90004.00 (diff -20.00, tolerance 0.07)"
+          ],
+          "input_tokens": 2672,
+          "output_tokens": 578,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 4669,
+      "output_tokens": 1112,
+      "thinking_tokens": 0,
+      "latency_s": 6.1,
+      "billed_output_tokens": 1112,
+      "cost_usd": 0.004181,
+      "wall_time_s": 0.02
+    }
+  ]
+}

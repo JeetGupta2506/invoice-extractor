@@ -1,0 +1,136 @@
+{
+  "file": "U04.pdf",
+  "status": "ok",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "checks": [
+    {
+      "name": "schema_pydantic",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "schema_json",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "totals_reconcile",
+      "passed": true,
+      "severity": "error",
+      "detail": "line items 528.90 + tax 0.00 = 528.90 vs total 528.90 (diff +0.00, tolerance 0.06)"
+    },
+    {
+      "name": "required_fields",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "subtotal_matches_lines",
+      "passed": true,
+      "severity": "warning",
+      "detail": "sum of rows 528.90 vs printed subtotal 528.90"
+    },
+    {
+      "name": "tax_lines_sum",
+      "passed": true,
+      "severity": "warning",
+      "detail": "tax lines 0.00 vs tax_total 0.00"
+    },
+    {
+      "name": "line_math",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "date_plausible",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "currency_known",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    }
+  ],
+  "document": {
+    "source_kind": "pdf_digital",
+    "pages": 1,
+    "has_text_layer": true
+  },
+  "llm": {
+    "model": "gemini-3.5-flash-lite",
+    "thinking_level": "minimal",
+    "prompt_version": "v1",
+    "input_mode": "image+text",
+    "rounds": [
+      {
+        "round": 1,
+        "cached": true,
+        "problems": [],
+        "input_tokens": 2374,
+        "output_tokens": 430,
+        "thinking_tokens": 0
+      }
+    ],
+    "input_tokens": 2374,
+    "output_tokens": 430,
+    "thinking_tokens": 0,
+    "latency_s": 3.69,
+    "billed_output_tokens": 430,
+    "cost_usd": 0.001787,
+    "wall_time_s": 0.01
+  },
+  "raw_extraction": {
+    "document_type": "invoice",
+    "legibility": "clear",
+    "vendor": "Bluefin Cloud Services Inc.",
+    "invoice_number": "BF-2026-07-11874",
+    "invoice_date_as_printed": "2026-07-01",
+    "invoice_date": "2026-07-01",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Compute instances (instance-hours)",
+        "quantity": 1440.0,
+        "unit_price": 0.09,
+        "amount": 122.4
+      },
+      {
+        "description": "Managed database, standard tier (month)",
+        "quantity": 1.0,
+        "unit_price": 249.0,
+        "amount": 249.0
+      },
+      {
+        "description": "Object storage (TB-month)",
+        "quantity": 2.5,
+        "unit_price": 23.0,
+        "amount": 57.5
+      },
+      {
+        "description": "Support plan, Business (month)",
+        "quantity": 1.0,
+        "unit_price": 100.0,
+        "amount": 100.0
+      }
+    ],
+    "subtotal": 528.9,
+    "tax_lines": [
+      {
+        "label": "Tax (reverse charge / not applicable)",
+        "amount": 0.0
+      }
+    ],
+    "tax_total": 0.0,
+    "total": 528.9,
+    "notes": null
+  }
+}

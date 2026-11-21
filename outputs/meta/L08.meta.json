@@ -1,0 +1,70 @@
+{
+  "file": "L08.pdf",
+  "status": "ok",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "checks": [
+    {
+      "name": "schema_pydantic",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "schema_json",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "classified_non_invoice",
+      "passed": true,
+      "severity": "warning",
+      "detail": "document_type=purchase_order"
+    }
+  ],
+  "document": {
+    "source_kind": "pdf_digital",
+    "pages": 1,
+    "has_text_layer": true
+  },
+  "llm": {
+    "model": "gemini-3.5-flash-lite",
+    "thinking_level": "minimal",
+    "prompt_version": "v1",
+    "input_mode": "image+text",
+    "rounds": [
+      {
+        "round": 1,
+        "cached": true,
+        "problems": [],
+        "input_tokens": 2458,
+        "output_tokens": 128,
+        "thinking_tokens": 0
+      }
+    ],
+    "input_tokens": 2458,
+    "output_tokens": 128,
+    "thinking_tokens": 0,
+    "latency_s": 3.16,
+    "billed_output_tokens": 128,
+    "cost_usd": 0.001057,
+    "wall_time_s": 0.0
+  },
+  "raw_extraction": {
+    "document_type": "purchase_order",
+    "legibility": "clear",
+    "vendor": null,
+    "invoice_number": null,
+    "invoice_date_as_printed": null,
+    "invoice_date": null,
+    "currency": null,
+    "line_items": null,
+    "subtotal": null,
+    "tax_lines": null,
+    "tax_total": null,
+    "total": null,
+    "notes": "The document is a purchase order, not an invoice."
+  }
+}

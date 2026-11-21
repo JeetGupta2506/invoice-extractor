@@ -1,0 +1,140 @@
+{
+  "file": "L03.pdf",
+  "status": "ok",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "checks": [
+    {
+      "name": "schema_pydantic",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "schema_json",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "totals_reconcile",
+      "passed": true,
+      "severity": "error",
+      "detail": "line items 54380.00 + tax 9788.40 = 64168.40 vs total 64168.40 (diff +0.00, tolerance 0.06)"
+    },
+    {
+      "name": "required_fields",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "subtotal_matches_lines",
+      "passed": true,
+      "severity": "warning",
+      "detail": "sum of rows 54380.00 vs printed subtotal 54380.00"
+    },
+    {
+      "name": "tax_lines_sum",
+      "passed": true,
+      "severity": "warning",
+      "detail": "tax lines 9788.40 vs tax_total 9788.40"
+    },
+    {
+      "name": "line_math",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "date_plausible",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "currency_known",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    }
+  ],
+  "document": {
+    "source_kind": "pdf_digital",
+    "pages": 1,
+    "has_text_layer": true
+  },
+  "llm": {
+    "model": "gemini-3.5-flash-lite",
+    "thinking_level": "minimal",
+    "prompt_version": "v1",
+    "input_mode": "image+text",
+    "rounds": [
+      {
+        "round": 1,
+        "cached": true,
+        "problems": [],
+        "input_tokens": 2474,
+        "output_tokens": 477,
+        "thinking_tokens": 0
+      }
+    ],
+    "input_tokens": 2474,
+    "output_tokens": 477,
+    "thinking_tokens": 0,
+    "latency_s": 2.7,
+    "billed_output_tokens": 477,
+    "cost_usd": 0.001935,
+    "wall_time_s": 0.0
+  },
+  "raw_extraction": {
+    "document_type": "invoice",
+    "legibility": "clear",
+    "vendor": "Kaveri Office Mart Pvt Ltd",
+    "invoice_number": "KOM/26-27/00418",
+    "invoice_date_as_printed": "23/06/2026",
+    "invoice_date": "2026-06-23",
+    "currency": "INR",
+    "line_items": [
+      {
+        "description": "A4 copier paper 75 GSM (ream)",
+        "quantity": 40.0,
+        "unit_price": 289.0,
+        "amount": 11560.0
+      },
+      {
+        "description": "Whiteboard markers (box of 10)",
+        "quantity": 12.0,
+        "unit_price": 215.0,
+        "amount": 2580.0
+      },
+      {
+        "description": "Ergonomic mesh office chair",
+        "quantity": 6.0,
+        "unit_price": 6450.0,
+        "amount": 38700.0
+      },
+      {
+        "description": "Heavy-duty stapler",
+        "quantity": 4.0,
+        "unit_price": 385.0,
+        "amount": 1540.0
+      }
+    ],
+    "subtotal": 54380.0,
+    "tax_lines": [
+      {
+        "label": "CGST @ 9%",
+        "amount": 4894.2
+      },
+      {
+        "label": "SGST @ 9%",
+        "amount": 4894.2
+      }
+    ],
+    "tax_total": 9788.4,
+    "total": 64168.4,
+    "notes": null
+  }
+}

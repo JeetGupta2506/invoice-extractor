@@ -1,0 +1,136 @@
+{
+  "file": "L06.pdf",
+  "status": "ok",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "checks": [
+    {
+      "name": "schema_pydantic",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "schema_json",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "totals_reconcile",
+      "passed": true,
+      "severity": "error",
+      "detail": "line items 60740.00 + tax 10933.20 = 71673.20 vs total 71673.20 (diff +0.00, tolerance 0.06)"
+    },
+    {
+      "name": "required_fields",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "subtotal_matches_lines",
+      "passed": true,
+      "severity": "warning",
+      "detail": "sum of rows 60740.00 vs printed subtotal 60740.00"
+    },
+    {
+      "name": "tax_lines_sum",
+      "passed": true,
+      "severity": "warning",
+      "detail": "tax lines 10933.20 vs tax_total 10933.20"
+    },
+    {
+      "name": "line_math",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "date_plausible",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "currency_known",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    }
+  ],
+  "document": {
+    "source_kind": "pdf_digital",
+    "pages": 1,
+    "has_text_layer": true
+  },
+  "llm": {
+    "model": "gemini-3.5-flash-lite",
+    "thinking_level": "minimal",
+    "prompt_version": "v1",
+    "input_mode": "image+text",
+    "rounds": [
+      {
+        "round": 1,
+        "cached": true,
+        "problems": [],
+        "input_tokens": 2462,
+        "output_tokens": 459,
+        "thinking_tokens": 0
+      }
+    ],
+    "input_tokens": 2462,
+    "output_tokens": 459,
+    "thinking_tokens": 0,
+    "latency_s": 2.38,
+    "billed_output_tokens": 459,
+    "cost_usd": 0.001886,
+    "wall_time_s": 0.0
+  },
+  "raw_extraction": {
+    "document_type": "invoice",
+    "legibility": "clear",
+    "vendor": "Anand & Rao Associates",
+    "invoice_number": "AR/2026/0093",
+    "invoice_date_as_printed": "30-05-2026",
+    "invoice_date": "2026-05-30",
+    "currency": "INR",
+    "line_items": [
+      {
+        "description": "Monthly compliance retainer (May 2026)",
+        "quantity": null,
+        "unit_price": 45000.0,
+        "amount": 45000.0
+      },
+      {
+        "description": "GST return filing (GSTR-1 and GSTR-3B)",
+        "quantity": 1.0,
+        "unit_price": 6500.0,
+        "amount": 6500.0
+      },
+      {
+        "description": "TDS return preparation (quarterly)",
+        "quantity": 1.0,
+        "unit_price": 8000.0,
+        "amount": 8000.0
+      },
+      {
+        "description": "Out-of-pocket expenses (reimbursable)",
+        "quantity": null,
+        "unit_price": 1240.0,
+        "amount": 1240.0
+      }
+    ],
+    "subtotal": 60740.0,
+    "tax_lines": [
+      {
+        "label": "IGST @ 18%",
+        "amount": 10933.2
+      }
+    ],
+    "tax_total": 10933.2,
+    "total": 71673.2,
+    "notes": null
+  }
+}

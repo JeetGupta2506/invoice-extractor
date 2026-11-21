@@ -1,0 +1,318 @@
+{
+  "n_docs": 10,
+  "fields": {
+    "is_invoice": {
+      "correct": 10,
+      "n": 10,
+      "accuracy": 1.0,
+      "correct_invoices_only": 9,
+      "n_invoices": 9
+    },
+    "vendor": {
+      "correct": 10,
+      "n": 10,
+      "accuracy": 1.0,
+      "correct_invoices_only": 9,
+      "n_invoices": 9
+    },
+    "invoice_number": {
+      "correct": 9,
+      "n": 10,
+      "accuracy": 0.9,
+      "correct_invoices_only": 8,
+      "n_invoices": 9
+    },
+    "invoice_date": {
+      "correct": 10,
+      "n": 10,
+      "accuracy": 1.0,
+      "correct_invoices_only": 9,
+      "n_invoices": 9
+    },
+    "currency": {
+      "correct": 10,
+      "n": 10,
+      "accuracy": 1.0,
+      "correct_invoices_only": 9,
+      "n_invoices": 9
+    },
+    "line_items": {
+      "correct": 9,
+      "n": 10,
+      "accuracy": 0.9,
+      "correct_invoices_only": 8,
+      "n_invoices": 9
+    },
+    "tax_total": {
+      "correct": 10,
+      "n": 10,
+      "accuracy": 1.0,
+      "correct_invoices_only": 9,
+      "n_invoices": 9
+    },
+    "total": {
+      "correct": 10,
+      "n": 10,
+      "accuracy": 1.0,
+      "correct_invoices_only": 9,
+      "n_invoices": 9
+    }
+  },
+  "perfect_docs": 8,
+  "line_rows": {
+    "gold": 66,
+    "pred": 66,
+    "matched": 65
+  },
+  "errors": [
+    {
+      "doc": "L05.pdf",
+      "field": "invoice_number",
+      "detail": "got 'DHS-0261-26', expected 'OHS-0261-26'"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "line_items",
+      "detail": "row 2: quantity 20 != 18"
+    }
+  ],
+  "review": {
+    "flagged": [],
+    "wrong": [
+      "L05.pdf",
+      "L09.pdf"
+    ]
+  },
+  "llm": [
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 398,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 398,
+      "thinking_tokens": 0,
+      "latency_s": 4.47,
+      "billed_output_tokens": 398,
+      "cost_usd": 0.001602,
+      "wall_time_s": 6.37
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 573,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 573,
+      "thinking_tokens": 0,
+      "latency_s": 3.69,
+      "billed_output_tokens": 573,
+      "cost_usd": 0.00204,
+      "wall_time_s": 3.7
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 471,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 471,
+      "thinking_tokens": 0,
+      "latency_s": 3.6,
+      "billed_output_tokens": 471,
+      "cost_usd": 0.001785,
+      "wall_time_s": 3.6
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 3117,
+          "output_tokens": 1718,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 3117,
+      "output_tokens": 1718,
+      "thinking_tokens": 0,
+      "latency_s": 5.02,
+      "billed_output_tokens": 1718,
+      "cost_usd": 0.00523,
+      "wall_time_s": 5.03
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 809,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 809,
+      "thinking_tokens": 0,
+      "latency_s": 3.75,
+      "billed_output_tokens": 809,
+      "cost_usd": 0.00263,
+      "wall_time_s": 3.75
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 459,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 459,
+      "thinking_tokens": 0,
+      "latency_s": 3.24,
+      "billed_output_tokens": 459,
+      "cost_usd": 0.001755,
+      "wall_time_s": 3.24
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 417,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 417,
+      "thinking_tokens": 0,
+      "latency_s": 3.45,
+      "billed_output_tokens": 417,
+      "cost_usd": 0.00165,
+      "wall_time_s": 3.45
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 128,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 128,
+      "thinking_tokens": 0,
+      "latency_s": 3.13,
+      "billed_output_tokens": 128,
+      "cost_usd": 0.000927,
+      "wall_time_s": 3.13
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 587,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 587,
+      "thinking_tokens": 0,
+      "latency_s": 4.53,
+      "billed_output_tokens": 587,
+      "cost_usd": 0.002075,
+      "wall_time_s": 4.53
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 1997,
+          "output_tokens": 531,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 1997,
+      "output_tokens": 531,
+      "thinking_tokens": 0,
+      "latency_s": 3.61,
+      "billed_output_tokens": 531,
+      "cost_usd": 0.001927,
+      "wall_time_s": 3.61
+    }
+  ]
+}

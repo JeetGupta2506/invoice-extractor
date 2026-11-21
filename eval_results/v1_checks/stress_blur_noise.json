@@ -1,0 +1,390 @@
+{
+  "n_docs": 10,
+  "fields": {
+    "is_invoice": {
+      "correct": 10,
+      "n": 10,
+      "accuracy": 1.0,
+      "correct_invoices_only": 9,
+      "n_invoices": 9
+    },
+    "vendor": {
+      "correct": 10,
+      "n": 10,
+      "accuracy": 1.0,
+      "correct_invoices_only": 9,
+      "n_invoices": 9
+    },
+    "invoice_number": {
+      "correct": 8,
+      "n": 10,
+      "accuracy": 0.8,
+      "correct_invoices_only": 7,
+      "n_invoices": 9
+    },
+    "invoice_date": {
+      "correct": 9,
+      "n": 10,
+      "accuracy": 0.9,
+      "correct_invoices_only": 8,
+      "n_invoices": 9
+    },
+    "currency": {
+      "correct": 10,
+      "n": 10,
+      "accuracy": 1.0,
+      "correct_invoices_only": 9,
+      "n_invoices": 9
+    },
+    "line_items": {
+      "correct": 6,
+      "n": 10,
+      "accuracy": 0.6,
+      "correct_invoices_only": 5,
+      "n_invoices": 9
+    },
+    "tax_total": {
+      "correct": 8,
+      "n": 10,
+      "accuracy": 0.8,
+      "correct_invoices_only": 7,
+      "n_invoices": 9
+    },
+    "total": {
+      "correct": 9,
+      "n": 10,
+      "accuracy": 0.9,
+      "correct_invoices_only": 8,
+      "n_invoices": 9
+    }
+  },
+  "perfect_docs": 5,
+  "line_rows": {
+    "gold": 66,
+    "pred": 66,
+    "matched": 57
+  },
+  "errors": [
+    {
+      "doc": "L02.pdf",
+      "field": "line_items",
+      "detail": "row 5: amount 960.0 != 560.0"
+    },
+    {
+      "doc": "L05.pdf",
+      "field": "invoice_number",
+      "detail": "got 'OHS-8261-26', expected 'OHS-0261-26'"
+    },
+    {
+      "doc": "L05.pdf",
+      "field": "line_items",
+      "detail": "row 7: amount 3800.0 != 3840.0"
+    },
+    {
+      "doc": "L05.pdf",
+      "field": "tax_total",
+      "detail": "got 12748.9, expected 12708.9"
+    },
+    {
+      "doc": "L07.pdf",
+      "field": "invoice_number",
+      "detail": "got 'PHS-1842', expected 'PHS-1042'"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "invoice_date",
+      "detail": "got '2026-10-24', expected '2026-10-14'"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "line_items",
+      "detail": "row 1: amount 11250.0 != 11500.0; quantity 22.5 != 12.5; row 2: amount 14000.0 != 14040.0; quantity 20 != 18; row 3: amount 5950.0 != 6080.0; quantity 8.5 != 9.5; row 4: amount 2800.0 != 2870.0; row 5: amount 5500.0 != 6160.0"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "tax_total",
+      "detail": "got 1975.0, expected 2032.5"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "total",
+      "detail": "got 41475.0, expected 42682.5"
+    },
+    {
+      "doc": "L10.pdf",
+      "field": "line_items",
+      "detail": "row 1: description 'Brake pad set, front (radial)' vs 'Brake pad set, front (sedan)' (sim 0.82); row 5: amount 5500.0 != 5580.0; quantity 10 != 18"
+    }
+  ],
+  "review": {
+    "flagged": [
+      "L02.pdf",
+      "L04.pdf",
+      "L09.pdf",
+      "L10.pdf"
+    ],
+    "wrong": [
+      "L02.pdf",
+      "L05.pdf",
+      "L07.pdf",
+      "L09.pdf",
+      "L10.pdf"
+    ]
+  },
+  "llm": [
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 409,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 409,
+      "thinking_tokens": 0,
+      "latency_s": 5.05,
+      "billed_output_tokens": 409,
+      "cost_usd": 0.00163,
+      "wall_time_s": 5.51
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [
+            "totals_reconcile: line items 20010.00 + tax 3529.80 = 23539.80 vs total 23139.80 (diff +400.00, tolerance 0.08)"
+          ],
+          "input_tokens": 2025,
+          "output_tokens": 536,
+          "thinking_tokens": 0
+        },
+        {
+          "round": 2,
+          "cached": false,
+          "problems": [
+            "totals_reconcile: line items 20010.00 + tax 3529.80 = 23539.80 vs total 23139.80 (diff +400.00, tolerance 0.08)"
+          ],
+          "input_tokens": 2702,
+          "output_tokens": 587,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 4727,
+      "output_tokens": 1123,
+      "thinking_tokens": 0,
+      "latency_s": 12.17,
+      "billed_output_tokens": 1123,
+      "cost_usd": 0.004226,
+      "wall_time_s": 12.18
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 471,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 471,
+      "thinking_tokens": 0,
+      "latency_s": 3.93,
+      "billed_output_tokens": 471,
+      "cost_usd": 0.001785,
+      "wall_time_s": 3.94
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 3117,
+          "output_tokens": 1736,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 3117,
+      "output_tokens": 1736,
+      "thinking_tokens": 0,
+      "latency_s": 10.27,
+      "billed_output_tokens": 1736,
+      "cost_usd": 0.005275,
+      "wall_time_s": 19.79
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 808,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 808,
+      "thinking_tokens": 0,
+      "latency_s": 6.38,
+      "billed_output_tokens": 808,
+      "cost_usd": 0.002628,
+      "wall_time_s": 6.39
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 459,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 459,
+      "thinking_tokens": 0,
+      "latency_s": 5.61,
+      "billed_output_tokens": 459,
+      "cost_usd": 0.001755,
+      "wall_time_s": 5.61
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 417,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 417,
+      "thinking_tokens": 0,
+      "latency_s": 6.48,
+      "billed_output_tokens": 417,
+      "cost_usd": 0.00165,
+      "wall_time_s": 6.48
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 128,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 128,
+      "thinking_tokens": 0,
+      "latency_s": 4.65,
+      "billed_output_tokens": 128,
+      "cost_usd": 0.000927,
+      "wall_time_s": 4.65
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 565,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 565,
+      "thinking_tokens": 0,
+      "latency_s": 7.59,
+      "billed_output_tokens": 565,
+      "cost_usd": 0.00202,
+      "wall_time_s": 7.59
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [
+            "totals_reconcile: line items 70240.00 + tax 19689.60 = 89929.60 vs total 90009.60 (diff -80.00, tolerance 0.07)"
+          ],
+          "input_tokens": 1997,
+          "output_tokens": 533,
+          "thinking_tokens": 0
+        },
+        {
+          "round": 2,
+          "cached": false,
+          "problems": [
+            "totals_reconcile: line items 70240.00 + tax 19689.60 = 89929.60 vs total 90009.60 (diff -80.00, tolerance 0.07)"
+          ],
+          "input_tokens": 2671,
+          "output_tokens": 592,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 4668,
+      "output_tokens": 1125,
+      "thinking_tokens": 0,
+      "latency_s": 15.45,
+      "billed_output_tokens": 1125,
+      "cost_usd": 0.004213,
+      "wall_time_s": 15.46
+    }
+  ]
+}

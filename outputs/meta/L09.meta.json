@@ -1,0 +1,152 @@
+{
+  "file": "L09.pdf",
+  "status": "ok",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "checks": [
+    {
+      "name": "schema_pydantic",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "schema_json",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "totals_reconcile",
+      "passed": true,
+      "severity": "error",
+      "detail": "line items 40650.00 + tax 2032.50 = 42682.50 vs total 42682.50 (diff +0.00, tolerance 0.07)"
+    },
+    {
+      "name": "required_fields",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "subtotal_matches_lines",
+      "passed": true,
+      "severity": "warning",
+      "detail": "sum of rows 40650.00 vs printed subtotal 40650.00"
+    },
+    {
+      "name": "tax_lines_sum",
+      "passed": true,
+      "severity": "warning",
+      "detail": "tax lines 2032.50 vs tax_total 2032.50"
+    },
+    {
+      "name": "line_math",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "date_plausible",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "currency_known",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "scan_resolution",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    }
+  ],
+  "document": {
+    "source_kind": "pdf_scanned",
+    "pages": 1,
+    "has_text_layer": false
+  },
+  "llm": {
+    "model": "gemini-3.5-flash-lite",
+    "thinking_level": "minimal",
+    "prompt_version": "v1",
+    "input_mode": "image",
+    "rounds": [
+      {
+        "round": 1,
+        "cached": true,
+        "problems": [],
+        "input_tokens": 2025,
+        "output_tokens": 542,
+        "thinking_tokens": 0
+      }
+    ],
+    "input_tokens": 2025,
+    "output_tokens": 542,
+    "thinking_tokens": 0,
+    "latency_s": 10.35,
+    "billed_output_tokens": 542,
+    "cost_usd": 0.001962,
+    "wall_time_s": 0.0
+  },
+  "raw_extraction": {
+    "document_type": "invoice",
+    "legibility": "clear",
+    "vendor": "COASTAL FRESH SEAFOODS",
+    "invoice_number": "CFS-4471",
+    "invoice_date_as_printed": "14/10/2026",
+    "invoice_date": "2026-10-14",
+    "currency": "INR",
+    "line_items": [
+      {
+        "description": "King fish (seer), cleaned, kg",
+        "quantity": 12.5,
+        "unit_price": 920.0,
+        "amount": 11500.0
+      },
+      {
+        "description": "Tiger prawns 16/20, kg",
+        "quantity": 18.0,
+        "unit_price": 780.0,
+        "amount": 14040.0
+      },
+      {
+        "description": "Pomfret, whole, kg",
+        "quantity": 9.5,
+        "unit_price": 640.0,
+        "amount": 6080.0
+      },
+      {
+        "description": "Squid, cleaned, kg",
+        "quantity": 7.0,
+        "unit_price": 410.0,
+        "amount": 2870.0
+      },
+      {
+        "description": "Crab (live), kg",
+        "quantity": 11.0,
+        "unit_price": 560.0,
+        "amount": 6160.0
+      }
+    ],
+    "subtotal": 40650.0,
+    "tax_lines": [
+      {
+        "label": "CGST @ 2.5%",
+        "amount": 1016.25
+      },
+      {
+        "label": "SGST @ 2.5%",
+        "amount": 1016.25
+      }
+    ],
+    "tax_total": 2032.5,
+    "total": 42682.5,
+    "notes": null
+  }
+}

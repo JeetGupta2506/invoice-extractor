@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invoice Extractor</title>
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --ink:#1c2430; --muted:#66707d; --line:#e2e5ea;
+          --ok:#1d7a46; --okbg:#e6f4ec; --warn:#8a5a00; --warnbg:#fff4dc; --bad:#a8241c; --badbg:#fde8e6; --accent:#3b4fd8; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background:var(--bg); color:var(--ink); }
+  header { padding:14px 20px; border-bottom:1px solid var(--line); background:var(--card); display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  h1 { font-size:16px; margin:0; }
+  .drop { border:1.5px dashed #b8bfca; border-radius:8px; padding:8px 14px; cursor:pointer; color:var(--muted); }
+  .drop.over { border-color:var(--accent); color:var(--accent); }
+  main { display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap:16px; padding:16px; height:calc(100vh - 62px); }
+  @media (max-width: 900px) { main { grid-template-columns:1fr; height:auto; } .pane { min-height:60vh; } }
+  .pane { background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:auto; }
+  #preview { display:flex; align-items:center; justify-content:center; }
+  #preview img { max-width:100%; }
+  #preview iframe { width:100%; height:100%; border:0; }
+  .empty { color:var(--muted); padding:40px; text-align:center; }
+  #fields { padding:16px 18px; }
+  .badge { display:inline-block; padding:2px 8px; border-radius:99px; font-size:12px; font-weight:600; margin-right:6px; }
+  .ok { background:var(--okbg); color:var(--ok); } .warn { background:var(--warnbg); color:var(--warn); } .bad { background:var(--badbg); color:var(--bad); }
+  table { border-collapse:collapse; width:100%; margin:10px 0 16px; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:500; width:140px; }
+  td.num { text-align:right; font-variant-numeric: tabular-nums; }
+  h2 { font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:18px 0 4px; }
+  ul.checks { list-style:none; padding:0; margin:0; }
+  ul.checks li { padding:3px 0; }
+  details { margin-top:14px; } pre { background:#f3f4f6; padding:10px; border-radius:6px; overflow:auto; font-size:12px; }
+  .spin { color:var(--muted); padding:40px; text-align:center; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Invoice Extractor</h1>
+  <label class="drop" id="drop">Drop a PDF / image here or click to choose
+    <input type="file" id="file" accept=".pdf,.jpg,.jpeg,.png,.tif,.tiff,.webp" hidden>
+  </label>
+  <span id="fname" style="color:var(--muted)"></span>
+</header>
+<main>
+  <section class="pane" id="preview"><div class="empty">Document preview</div></section>
+  <section class="pane" id="fields"><div class="empty">Extracted fields appear here</div></section>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = (n) => n === null || n === undefined ? '<span style="color:#999">null</span>' : esc(typeof n === "number" ? n.toLocaleString(undefined,{maximumFractionDigits:4}) : n);
+
+function showPreview(file) {
+  const url = URL.createObjectURL(file);
+  $("preview").innerHTML = file.type === "application/pdf" || /\.pdf$/i.test(file.name)
+    ? `<iframe src="${url}"></iframe>` : `<img src="${url}" alt="uploaded document">`;
+}
+
+function render(data) {
+  const m = data.meta || {}, r = data.result;
+  const st = data.status;
+  const cls = st === "ok" || st === "ok_after_retry" ? (m.needs_review ? "warn" : "ok") : (st === "flagged" ? "warn" : "bad");
+  let h = `<div><span class="badge ${cls}">${esc(st)}</span>`;
+  if (m.needs_review) h += `<span class="badge warn">needs review</span>`;
+  h += `</div>`;
+  if (m.error) h += `<p class="badge bad" style="display:block;margin-top:10px">${esc(m.error.code)}: ${esc(m.error.message)}</p>`;
+  if (r) {
+    h += `<table>`;
+    for (const k of ["is_invoice","vendor","invoice_number","invoice_date","currency","tax_total","total"])
+      h += `<tr><th>${k}</th><td class="${typeof r[k]==="number"?"num":""}">${fmt(r[k])}</td></tr>`;
+    h += `</table>`;
+    if (r.line_items) {
+      h += `<h2>Line items (${r.line_items.length})</h2><table><tr><th style="width:auto">Description</th><th class="num">Qty</th><th class="num">Amount</th></tr>`;
+      for (const li of r.line_items) h += `<tr><td>${esc(li.description)}</td><td class="num">${fmt(li.quantity)}</td><td class="num">${fmt(li.amount)}</td></tr>`;
+      h += `</table>`;
+    }
+  }
+  if (m.checks && m.checks.length) {
+    h += `<h2>Checks</h2><ul class="checks">`;
+    for (const c of m.checks) {
+      const icon = c.passed ? '<span class="badge ok">pass</span>' : `<span class="badge ${c.severity==="error"?"bad":"warn"}">${c.severity}</span>`;
+      h += `<li>${icon}<b>${esc(c.name)}</b> <span style="color:var(--muted)">${esc(c.detail)}</span></li>`;
+    }
+    h += `</ul>`;
+  }
+  const l = m.llm || {};
+  if (l.model) h += `<h2>Cost</h2><p>${esc(l.model)} · ${l.input_tokens} in / ${l.billed_output_tokens} out tokens · $${(l.cost_usd ?? 0).toFixed(5)} · ${l.latency_s}s · ${l.rounds?.length || 0} round(s)</p>`;
+  h += `<details><summary>Raw JSON</summary><pre>${esc(JSON.stringify(data, null, 2))}</pre></details>`;
+  $("fields").innerHTML = h;
+}
+
+async function upload(file) {
+  if (!file) return;
+  $("fname").textContent = file.name;
+  showPreview(file);
+  $("fields").innerHTML = `<div class="spin">Extracting…</div>`;
+  const fd = new FormData(); fd.append("file", file);
+  try {
+    const res = await fetch("/extract", { method: "POST", body: fd });
+    render(await res.json());
+  } catch (e) {
+    $("fields").innerHTML = `<p class="badge bad">Request failed: ${esc(e.message)}</p>`;
+  }
+}
+
+$("file").addEventListener("change", e => upload(e.target.files[0]));
+const drop = $("drop");
+["dragenter","dragover"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add("over"); }));
+["dragleave","drop"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove("over"); }));
+drop.addEventListener("drop", e => upload(e.dataTransfer.files[0]));
+</script>
+</body>
+</html>

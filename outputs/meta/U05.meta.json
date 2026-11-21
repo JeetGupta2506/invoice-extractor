@@ -1,0 +1,142 @@
+{
+  "file": "U05.pdf",
+  "status": "ok",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "checks": [
+    {
+      "name": "schema_pydantic",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "schema_json",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "totals_reconcile",
+      "passed": true,
+      "severity": "error",
+      "detail": "line items 2676.00 + tax 535.20 = 3211.20 vs total 3211.20 (diff +0.00, tolerance 0.06)"
+    },
+    {
+      "name": "required_fields",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "subtotal_matches_lines",
+      "passed": true,
+      "severity": "warning",
+      "detail": "sum of rows 2676.00 vs printed subtotal 2676.00"
+    },
+    {
+      "name": "tax_lines_sum",
+      "passed": true,
+      "severity": "warning",
+      "detail": "tax lines 535.20 vs tax_total 535.20"
+    },
+    {
+      "name": "line_math",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "date_plausible",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "currency_known",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "scan_resolution",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    }
+  ],
+  "document": {
+    "source_kind": "pdf_scanned",
+    "pages": 1,
+    "has_text_layer": false
+  },
+  "llm": {
+    "model": "gemini-3.5-flash-lite",
+    "thinking_level": "minimal",
+    "prompt_version": "v1",
+    "input_mode": "image",
+    "rounds": [
+      {
+        "round": 1,
+        "cached": true,
+        "problems": [],
+        "input_tokens": 2025,
+        "output_tokens": 433,
+        "thinking_tokens": 0
+      }
+    ],
+    "input_tokens": 2025,
+    "output_tokens": 433,
+    "thinking_tokens": 0,
+    "latency_s": 3.71,
+    "billed_output_tokens": 433,
+    "cost_usd": 0.00169,
+    "wall_time_s": 0.01
+  },
+  "raw_extraction": {
+    "document_type": "invoice",
+    "legibility": "clear",
+    "vendor": "Lakeside Printing Co",
+    "invoice_number": "LP-10932",
+    "invoice_date_as_printed": "21 Oct 2026",
+    "invoice_date": "2026-10-21",
+    "currency": "GBP",
+    "line_items": [
+      {
+        "description": "Prospectus, A4 24pp, saddle-stitched",
+        "quantity": 1500.0,
+        "unit_price": 1.42,
+        "amount": 2130.0
+      },
+      {
+        "description": "Pull-up banner 850x2000mm",
+        "quantity": 4.0,
+        "unit_price": 68.0,
+        "amount": 272.0
+      },
+      {
+        "description": "Letterhead 120gsm (ream of 500)",
+        "quantity": 6.0,
+        "unit_price": 41.0,
+        "amount": 246.0
+      },
+      {
+        "description": "Delivery",
+        "quantity": 1.0,
+        "unit_price": 28.0,
+        "amount": 28.0
+      }
+    ],
+    "subtotal": 2676.0,
+    "tax_lines": [
+      {
+        "label": "VAT @ 20%",
+        "amount": 535.2
+      }
+    ],
+    "tax_total": 535.2,
+    "total": 3211.2,
+    "notes": null
+  }
+}

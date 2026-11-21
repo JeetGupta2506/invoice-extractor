@@ -1,0 +1,136 @@
+{
+  "file": "L01.pdf",
+  "status": "ok",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "checks": [
+    {
+      "name": "schema_pydantic",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "schema_json",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "totals_reconcile",
+      "passed": true,
+      "severity": "error",
+      "detail": "line items 569.50 + tax 113.90 = 683.40 vs total 683.40 (diff +0.00, tolerance 0.06)"
+    },
+    {
+      "name": "required_fields",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "subtotal_matches_lines",
+      "passed": true,
+      "severity": "warning",
+      "detail": "sum of rows 569.50 vs printed subtotal 569.50"
+    },
+    {
+      "name": "tax_lines_sum",
+      "passed": true,
+      "severity": "warning",
+      "detail": "tax lines 113.90 vs tax_total 113.90"
+    },
+    {
+      "name": "line_math",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "date_plausible",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "currency_known",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    }
+  ],
+  "document": {
+    "source_kind": "pdf_digital",
+    "pages": 1,
+    "has_text_layer": true
+  },
+  "llm": {
+    "model": "gemini-3.5-flash-lite",
+    "thinking_level": "minimal",
+    "prompt_version": "v1",
+    "input_mode": "image+text",
+    "rounds": [
+      {
+        "round": 1,
+        "cached": true,
+        "problems": [],
+        "input_tokens": 2345,
+        "output_tokens": 409,
+        "thinking_tokens": 0
+      }
+    ],
+    "input_tokens": 2345,
+    "output_tokens": 409,
+    "thinking_tokens": 0,
+    "latency_s": 3.28,
+    "billed_output_tokens": 409,
+    "cost_usd": 0.001726,
+    "wall_time_s": 0.0
+  },
+  "raw_extraction": {
+    "document_type": "invoice",
+    "legibility": "clear",
+    "vendor": "Northwind Logistics Ltd",
+    "invoice_number": "NWL-88213",
+    "invoice_date_as_printed": "08 April 2026",
+    "invoice_date": "2026-04-08",
+    "currency": "GBP",
+    "line_items": [
+      {
+        "description": "Pallet freight, Manchester to Glasgow",
+        "quantity": 3.0,
+        "unit_price": 145.0,
+        "amount": 435.0
+      },
+      {
+        "description": "Fuel surcharge (flat rate)",
+        "quantity": 1.0,
+        "unit_price": 62.5,
+        "amount": 62.5
+      },
+      {
+        "description": "Warehousing, per pallet per week",
+        "quantity": 12.0,
+        "unit_price": 4.75,
+        "amount": 57.0
+      },
+      {
+        "description": "Proof-of-delivery admin fee",
+        "quantity": 3.0,
+        "unit_price": 5.0,
+        "amount": 15.0
+      }
+    ],
+    "subtotal": 569.5,
+    "tax_lines": [
+      {
+        "label": "VAT @ 20%",
+        "amount": 113.9
+      }
+    ],
+    "tax_total": 113.9,
+    "total": 683.4,
+    "notes": null
+  }
+}

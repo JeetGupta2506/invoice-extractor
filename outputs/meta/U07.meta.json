@@ -1,0 +1,130 @@
+{
+  "file": "U07.pdf",
+  "status": "ok",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "checks": [
+    {
+      "name": "schema_pydantic",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "schema_json",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "totals_reconcile",
+      "passed": true,
+      "severity": "error",
+      "detail": "line items 8320.00 + tax 1580.80 = 9900.80 vs total 9900.80 (diff +0.00, tolerance 0.05)"
+    },
+    {
+      "name": "required_fields",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "subtotal_matches_lines",
+      "passed": true,
+      "severity": "warning",
+      "detail": "sum of rows 8320.00 vs printed subtotal 8320.00"
+    },
+    {
+      "name": "tax_lines_sum",
+      "passed": true,
+      "severity": "warning",
+      "detail": "tax lines 1580.80 vs tax_total 1580.80"
+    },
+    {
+      "name": "line_math",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "date_plausible",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "currency_known",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    }
+  ],
+  "document": {
+    "source_kind": "pdf_digital",
+    "pages": 1,
+    "has_text_layer": true
+  },
+  "llm": {
+    "model": "gemini-3.5-flash-lite",
+    "thinking_level": "minimal",
+    "prompt_version": "v1",
+    "input_mode": "image+text",
+    "rounds": [
+      {
+        "round": 1,
+        "cached": true,
+        "problems": [],
+        "input_tokens": 2370,
+        "output_tokens": 373,
+        "thinking_tokens": 0
+      }
+    ],
+    "input_tokens": 2370,
+    "output_tokens": 373,
+    "thinking_tokens": 0,
+    "latency_s": 3.34,
+    "billed_output_tokens": 373,
+    "cost_usd": 0.001643,
+    "wall_time_s": 0.01
+  },
+  "raw_extraction": {
+    "document_type": "invoice",
+    "legibility": "clear",
+    "vendor": "TechNova Solutions GmbH",
+    "invoice_number": "RE-2026-0317",
+    "invoice_date_as_printed": "28.04.2026",
+    "invoice_date": "2026-04-28",
+    "currency": "EUR",
+    "line_items": [
+      {
+        "description": "Softwareentwicklung (Stunden)",
+        "quantity": 64.0,
+        "unit_price": 95.0,
+        "amount": 6080.0
+      },
+      {
+        "description": "Projektmanagement (Stunden)",
+        "quantity": 16.0,
+        "unit_price": 110.0,
+        "amount": 1760.0
+      },
+      {
+        "description": "Einrichtung Hosting (einmalig)",
+        "quantity": 1.0,
+        "unit_price": 480.0,
+        "amount": 480.0
+      }
+    ],
+    "subtotal": 8320.0,
+    "tax_lines": [
+      {
+        "label": "MwSt. 19 %",
+        "amount": 1580.8
+      }
+    ],
+    "tax_total": 1580.8,
+    "total": 9900.8,
+    "notes": null
+  }
+}

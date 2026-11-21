@@ -1,0 +1,13 @@
+# secrets
+.env
+
+# sample documents are confidential (assignment rule) - keep them out of git
+data/
+
+# local
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.cache/
+eval_results/*.tmp

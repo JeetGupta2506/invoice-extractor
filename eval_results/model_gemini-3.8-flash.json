@@ -1,0 +1,505 @@
+{
+  "n_docs": 10,
+  "fields": {
+    "is_invoice": {
+      "correct": 4,
+      "n": 10,
+      "accuracy": 0.4,
+      "correct_invoices_only": 4,
+      "n_invoices": 9
+    },
+    "vendor": {
+      "correct": 4,
+      "n": 10,
+      "accuracy": 0.4,
+      "correct_invoices_only": 4,
+      "n_invoices": 9
+    },
+    "invoice_number": {
+      "correct": 4,
+      "n": 10,
+      "accuracy": 0.4,
+      "correct_invoices_only": 4,
+      "n_invoices": 9
+    },
+    "invoice_date": {
+      "correct": 4,
+      "n": 10,
+      "accuracy": 0.4,
+      "correct_invoices_only": 4,
+      "n_invoices": 9
+    },
+    "currency": {
+      "correct": 4,
+      "n": 10,
+      "accuracy": 0.4,
+      "correct_invoices_only": 4,
+      "n_invoices": 9
+    },
+    "line_items": {
+      "correct": 4,
+      "n": 10,
+      "accuracy": 0.4,
+      "correct_invoices_only": 4,
+      "n_invoices": 9
+    },
+    "tax_total": {
+      "correct": 4,
+      "n": 10,
+      "accuracy": 0.4,
+      "correct_invoices_only": 4,
+      "n_invoices": 9
+    },
+    "total": {
+      "correct": 4,
+      "n": 10,
+      "accuracy": 0.4,
+      "correct_invoices_only": 4,
+      "n_invoices": 9
+    }
+  },
+  "perfect_docs": 4,
+  "line_rows": {
+    "gold": 66,
+    "pred": 44,
+    "matched": 44
+  },
+  "errors": [
+    {
+      "doc": "L03.pdf",
+      "field": "is_invoice",
+      "detail": "got None, expected True"
+    },
+    {
+      "doc": "L03.pdf",
+      "field": "vendor",
+      "detail": "got None, expected 'Kaveri Office Mart Pvt Ltd'"
+    },
+    {
+      "doc": "L03.pdf",
+      "field": "invoice_number",
+      "detail": "got None, expected 'KOM/26-27/00418'"
+    },
+    {
+      "doc": "L03.pdf",
+      "field": "invoice_date",
+      "detail": "got None, expected '2026-06-23'"
+    },
+    {
+      "doc": "L03.pdf",
+      "field": "currency",
+      "detail": "got None, expected 'INR'"
+    },
+    {
+      "doc": "L03.pdf",
+      "field": "line_items",
+      "detail": "no prediction"
+    },
+    {
+      "doc": "L03.pdf",
+      "field": "tax_total",
+      "detail": "got None, expected 9788.4"
+    },
+    {
+      "doc": "L03.pdf",
+      "field": "total",
+      "detail": "got None, expected 64168.4"
+    },
+    {
+      "doc": "L06.pdf",
+      "field": "is_invoice",
+      "detail": "got None, expected True"
+    },
+    {
+      "doc": "L06.pdf",
+      "field": "vendor",
+      "detail": "got None, expected 'Anand & Rao Associates'"
+    },
+    {
+      "doc": "L06.pdf",
+      "field": "invoice_number",
+      "detail": "got None, expected 'AR/2026/0093'"
+    },
+    {
+      "doc": "L06.pdf",
+      "field": "invoice_date",
+      "detail": "got None, expected '2026-05-30'"
+    },
+    {
+      "doc": "L06.pdf",
+      "field": "currency",
+      "detail": "got None, expected 'INR'"
+    },
+    {
+      "doc": "L06.pdf",
+      "field": "line_items",
+      "detail": "no prediction"
+    },
+    {
+      "doc": "L06.pdf",
+      "field": "tax_total",
+      "detail": "got None, expected 10933.2"
+    },
+    {
+      "doc": "L06.pdf",
+      "field": "total",
+      "detail": "got None, expected 71673.2"
+    },
+    {
+      "doc": "L07.pdf",
+      "field": "is_invoice",
+      "detail": "got None, expected True"
+    },
+    {
+      "doc": "L07.pdf",
+      "field": "vendor",
+      "detail": "got None, expected 'Pixel Harbor Studio'"
+    },
+    {
+      "doc": "L07.pdf",
+      "field": "invoice_number",
+      "detail": "got None, expected 'PHS-1042'"
+    },
+    {
+      "doc": "L07.pdf",
+      "field": "invoice_date",
+      "detail": "got None, expected '2026-03-14'"
+    },
+    {
+      "doc": "L07.pdf",
+      "field": "currency",
+      "detail": "got None, expected 'USD'"
+    },
+    {
+      "doc": "L07.pdf",
+      "field": "line_items",
+      "detail": "no prediction"
+    },
+    {
+      "doc": "L07.pdf",
+      "field": "tax_total",
+      "detail": "got None, expected 334.13"
+    },
+    {
+      "doc": "L07.pdf",
+      "field": "total",
+      "detail": "got None, expected 4384.13"
+    },
+    {
+      "doc": "L08.pdf",
+      "field": "is_invoice",
+      "detail": "got None, expected False"
+    },
+    {
+      "doc": "L08.pdf",
+      "field": "vendor",
+      "detail": "got None, expected None"
+    },
+    {
+      "doc": "L08.pdf",
+      "field": "invoice_number",
+      "detail": "got None, expected None"
+    },
+    {
+      "doc": "L08.pdf",
+      "field": "invoice_date",
+      "detail": "got None, expected None"
+    },
+    {
+      "doc": "L08.pdf",
+      "field": "currency",
+      "detail": "got None, expected None"
+    },
+    {
+      "doc": "L08.pdf",
+      "field": "line_items",
+      "detail": "no prediction"
+    },
+    {
+      "doc": "L08.pdf",
+      "field": "tax_total",
+      "detail": "got None, expected None"
+    },
+    {
+      "doc": "L08.pdf",
+      "field": "total",
+      "detail": "got None, expected None"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "is_invoice",
+      "detail": "got None, expected True"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "vendor",
+      "detail": "got None, expected 'Coastal Fresh Seafoods'"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "invoice_number",
+      "detail": "got None, expected 'CFS-4471'"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "invoice_date",
+      "detail": "got None, expected '2026-10-14'"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "currency",
+      "detail": "got None, expected 'INR'"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "line_items",
+      "detail": "no prediction"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "tax_total",
+      "detail": "got None, expected 2032.5"
+    },
+    {
+      "doc": "L09.pdf",
+      "field": "total",
+      "detail": "got None, expected 42682.5"
+    },
+    {
+      "doc": "L10.pdf",
+      "field": "is_invoice",
+      "detail": "got None, expected True"
+    },
+    {
+      "doc": "L10.pdf",
+      "field": "vendor",
+      "detail": "got None, expected 'Metro Auto Parts'"
+    },
+    {
+      "doc": "L10.pdf",
+      "field": "invoice_number",
+      "detail": "got None, expected 'MAP/D/09-0312'"
+    },
+    {
+      "doc": "L10.pdf",
+      "field": "invoice_date",
+      "detail": "got None, expected '2026-09-03'"
+    },
+    {
+      "doc": "L10.pdf",
+      "field": "currency",
+      "detail": "got None, expected 'INR'"
+    },
+    {
+      "doc": "L10.pdf",
+      "field": "line_items",
+      "detail": "no prediction"
+    },
+    {
+      "doc": "L10.pdf",
+      "field": "tax_total",
+      "detail": "got None, expected 19689.6"
+    },
+    {
+      "doc": "L10.pdf",
+      "field": "total",
+      "detail": "got None, expected 90009.6"
+    }
+  ],
+  "review": {
+    "flagged": [
+      "L03.pdf",
+      "L06.pdf",
+      "L07.pdf",
+      "L08.pdf",
+      "L09.pdf",
+      "L10.pdf"
+    ],
+    "wrong": [
+      "L03.pdf",
+      "L06.pdf",
+      "L07.pdf",
+      "L08.pdf",
+      "L09.pdf",
+      "L10.pdf"
+    ]
+  },
+  "llm": [
+    {
+      "model": "gemini-3.8-flash",
+      "thinking_level": "low",
+      "prompt_version": "v1",
+      "input_mode": "image+text",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2345,
+          "output_tokens": 254,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2345,
+      "output_tokens": 254,
+      "thinking_tokens": 0,
+      "latency_s": 9.28,
+      "billed_output_tokens": 254,
+      "cost_usd": 0.002711,
+      "wall_time_s": 9.71
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "thinking_level": "low",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2025,
+          "output_tokens": 331,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2025,
+      "output_tokens": 331,
+      "thinking_tokens": 0,
+      "latency_s": 34.98,
+      "billed_output_tokens": 331,
+      "cost_usd": 0.00276,
+      "wall_time_s": 40.92
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "thinking_level": "low",
+      "prompt_version": "v1",
+      "input_mode": "image+text",
+      "rounds": [],
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "thinking_tokens": 0,
+      "latency_s": 0.0,
+      "billed_output_tokens": 0,
+      "cost_usd": 0.0,
+      "wall_time_s": 286.33
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "thinking_level": "low",
+      "prompt_version": "v1",
+      "input_mode": "image+text",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 4299,
+          "output_tokens": 1358,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 4299,
+      "output_tokens": 1358,
+      "thinking_tokens": 0,
+      "latency_s": 70.37,
+      "billed_output_tokens": 1358,
+      "cost_usd": 0.008317,
+      "wall_time_s": 173.28
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "thinking_level": "low",
+      "prompt_version": "v1",
+      "input_mode": "image+text",
+      "rounds": [
+        {
+          "round": 1,
+          "cached": false,
+          "problems": [],
+          "input_tokens": 2602,
+          "output_tokens": 533,
+          "thinking_tokens": 0
+        }
+      ],
+      "input_tokens": 2602,
+      "output_tokens": 533,
+      "thinking_tokens": 0,
+      "latency_s": 32.81,
+      "billed_output_tokens": 533,
+      "cost_usd": 0.00395,
+      "wall_time_s": 149.1
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "thinking_level": "low",
+      "prompt_version": "v1",
+      "input_mode": "image+text",
+      "rounds": [],
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "thinking_tokens": 0,
+      "latency_s": 0.0,
+      "billed_output_tokens": 0,
+      "cost_usd": 0.0,
+      "wall_time_s": 142.46
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "thinking_level": "low",
+      "prompt_version": "v1",
+      "input_mode": "image+text",
+      "rounds": [],
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "thinking_tokens": 0,
+      "latency_s": 0.0,
+      "billed_output_tokens": 0,
+      "cost_usd": 0.0,
+      "wall_time_s": 48.22
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "thinking_level": "low",
+      "prompt_version": "v1",
+      "input_mode": "image+text",
+      "rounds": [],
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "thinking_tokens": 0,
+      "latency_s": 0.0,
+      "billed_output_tokens": 0,
+      "cost_usd": 0.0,
+      "wall_time_s": 39.11
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "thinking_level": "low",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [],
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "thinking_tokens": 0,
+      "latency_s": 0.0,
+      "billed_output_tokens": 0,
+      "cost_usd": 0.0,
+      "wall_time_s": 134.52
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "thinking_level": "low",
+      "prompt_version": "v1",
+      "input_mode": "image",
+      "rounds": [],
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "thinking_tokens": 0,
+      "latency_s": 0.0,
+      "billed_output_tokens": 0,
+      "cost_usd": 0.0,
+      "wall_time_s": 55.21
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "file": "U01.pdf",
+  "status": "ok",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "checks": [
+    {
+      "name": "schema_pydantic",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "schema_json",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "totals_reconcile",
+      "passed": true,
+      "severity": "error",
+      "detail": "line items 27680.00 + tax 2980.50 = 30660.50 vs total 30660.50 (diff +0.00, tolerance 0.05)"
+    },
+    {
+      "name": "required_fields",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "subtotal_matches_lines",
+      "passed": true,
+      "severity": "warning",
+      "detail": "sum of rows 27680.00 vs printed subtotal 27680.00"
+    },
+    {
+      "name": "tax_lines_sum",
+      "passed": true,
+      "severity": "warning",
+      "detail": "tax lines 2980.50 vs tax_total 2980.50"
+    },
+    {
+      "name": "line_math",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "date_plausible",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "currency_known",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    }
+  ],
+  "document": {
+    "source_kind": "pdf_digital",
+    "pages": 1,
+    "has_text_layer": true
+  },
+  "llm": {
+    "model": "gemini-3.5-flash-lite",
+    "thinking_level": "minimal",
+    "prompt_version": "v1",
+    "input_mode": "image+text",
+    "rounds": [
+      {
+        "round": 1,
+        "cached": true,
+        "problems": [],
+        "input_tokens": 2422,
+        "output_tokens": 437,
+        "thinking_tokens": 0
+      }
+    ],
+    "input_tokens": 2422,
+    "output_tokens": 437,
+    "thinking_tokens": 0,
+    "latency_s": 4.73,
+    "billed_output_tokens": 437,
+    "cost_usd": 0.001819,
+    "wall_time_s": 0.01
+  },
+  "raw_extraction": {
+    "document_type": "invoice",
+    "legibility": "clear",
+    "vendor": "Blue Lotus Hospitality",
+    "invoice_number": "BL/GA/26/5528",
+    "invoice_date_as_printed": "10-Nov-2026",
+    "invoice_date": "2026-11-10",
+    "currency": "INR",
+    "line_items": [
+      {
+        "description": "Room charges, Deluxe (per night)",
+        "quantity": 3.0,
+        "unit_price": 7200.0,
+        "amount": 21600.0
+      },
+      {
+        "description": "Restaurant and bar",
+        "quantity": 1.0,
+        "unit_price": 5430.0,
+        "amount": 5430.0
+      },
+      {
+        "description": "Laundry service",
+        "quantity": 1.0,
+        "unit_price": 650.0,
+        "amount": 650.0
+      }
+    ],
+    "subtotal": 27680.0,
+    "tax_lines": [
+      {
+        "label": "GST @ 12% (room)",
+        "amount": 2592.0
+      },
+      {
+        "label": "GST @ 5% (restaurant)",
+        "amount": 271.5
+      },
+      {
+        "label": "GST @ 18% (laundry)",
+        "amount": 117.0
+      }
+    ],
+    "tax_total": 2980.5,
+    "total": 30660.5,
+    "notes": null
+  }
+}

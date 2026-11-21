@@ -1,0 +1,172 @@
+{
+  "file": "L05.pdf",
+  "status": "ok",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "checks": [
+    {
+      "name": "schema_pydantic",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "schema_json",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "totals_reconcile",
+      "passed": true,
+      "severity": "error",
+      "detail": "line items 70605.00 + tax 12708.90 = 83313.90 vs total 83313.90 (diff +0.00, tolerance 0.12)"
+    },
+    {
+      "name": "required_fields",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "subtotal_matches_lines",
+      "passed": true,
+      "severity": "warning",
+      "detail": "sum of rows 70605.00 vs printed subtotal 70605.00"
+    },
+    {
+      "name": "tax_lines_sum",
+      "passed": true,
+      "severity": "warning",
+      "detail": "tax lines 12708.90 vs tax_total 12708.90"
+    },
+    {
+      "name": "line_math",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "date_plausible",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "currency_known",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    }
+  ],
+  "document": {
+    "source_kind": "pdf_digital",
+    "pages": 1,
+    "has_text_layer": true
+  },
+  "llm": {
+    "model": "gemini-3.5-flash-lite",
+    "thinking_level": "minimal",
+    "prompt_version": "v1",
+    "input_mode": "image+text",
+    "rounds": [
+      {
+        "round": 1,
+        "cached": true,
+        "problems": [],
+        "input_tokens": 2602,
+        "output_tokens": 785,
+        "thinking_tokens": 0
+      }
+    ],
+    "input_tokens": 2602,
+    "output_tokens": 785,
+    "thinking_tokens": 0,
+    "latency_s": 3.5,
+    "billed_output_tokens": 785,
+    "cost_usd": 0.002743,
+    "wall_time_s": 0.0
+  },
+  "raw_extraction": {
+    "document_type": "invoice",
+    "legibility": "clear",
+    "vendor": "ORBIT HARDWARE SUPPLIES",
+    "invoice_number": "OHS-0261-26",
+    "invoice_date_as_printed": "27/01/2026",
+    "invoice_date": "2026-01-27",
+    "currency": "INR",
+    "line_items": [
+      {
+        "description": "Hex bolt M10 x 60 (box of 100)",
+        "quantity": 14.0,
+        "unit_price": 640.0,
+        "amount": 8960.0
+      },
+      {
+        "description": "Wood screw 2 in (box of 500)",
+        "quantity": 20.0,
+        "unit_price": 315.0,
+        "amount": 6300.0
+      },
+      {
+        "description": "Cutting disc 4 in (pack of 25)",
+        "quantity": 12.0,
+        "unit_price": 780.0,
+        "amount": 9360.0
+      },
+      {
+        "description": "Welding electrode 3.15mm (5 kg)",
+        "quantity": 18.0,
+        "unit_price": 690.0,
+        "amount": 12420.0
+      },
+      {
+        "description": "Angle grinder 850W",
+        "quantity": 3.0,
+        "unit_price": 3450.0,
+        "amount": 10350.0
+      },
+      {
+        "description": "Drill bit set HSS (13 pc)",
+        "quantity": 6.0,
+        "unit_price": 1120.0,
+        "amount": 6720.0
+      },
+      {
+        "description": "Safety gloves, leather (pair)",
+        "quantity": 40.0,
+        "unit_price": 96.0,
+        "amount": 3840.0
+      },
+      {
+        "description": "Spirit level 600mm",
+        "quantity": 5.0,
+        "unit_price": 410.0,
+        "amount": 2050.0
+      },
+      {
+        "description": "Measuring tape 5m",
+        "quantity": 15.0,
+        "unit_price": 185.0,
+        "amount": 2775.0
+      },
+      {
+        "description": "Anchor fastener M12 (box of 50)",
+        "quantity": 9.0,
+        "unit_price": 870.0,
+        "amount": 7830.0
+      }
+    ],
+    "subtotal": 70605.0,
+    "tax_lines": [
+      {
+        "label": "IGST @ 18%",
+        "amount": 12708.9
+      }
+    ],
+    "tax_total": 12708.9,
+    "total": 83313.9,
+    "notes": null
+  }
+}

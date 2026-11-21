@@ -1,0 +1,140 @@
+{
+  "file": "U08.pdf",
+  "status": "ok",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "checks": [
+    {
+      "name": "schema_pydantic",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "schema_json",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "totals_reconcile",
+      "passed": true,
+      "severity": "error",
+      "detail": "line items 1029.00 + tax 107.25 = 1136.25 vs total 1136.25 (diff +0.00, tolerance 0.06)"
+    },
+    {
+      "name": "required_fields",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "subtotal_matches_lines",
+      "passed": true,
+      "severity": "warning",
+      "detail": "sum of rows 1029.00 vs printed subtotal 1029.00"
+    },
+    {
+      "name": "tax_lines_sum",
+      "passed": true,
+      "severity": "warning",
+      "detail": "tax lines 107.25 vs tax_total 107.25"
+    },
+    {
+      "name": "line_math",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "date_plausible",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "currency_known",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    }
+  ],
+  "document": {
+    "source_kind": "pdf_digital",
+    "pages": 1,
+    "has_text_layer": true
+  },
+  "llm": {
+    "model": "gemini-3.5-flash-lite",
+    "thinking_level": "minimal",
+    "prompt_version": "v1",
+    "input_mode": "image+text",
+    "rounds": [
+      {
+        "round": 1,
+        "cached": true,
+        "problems": [],
+        "input_tokens": 2375,
+        "output_tokens": 447,
+        "thinking_tokens": 0
+      }
+    ],
+    "input_tokens": 2375,
+    "output_tokens": 447,
+    "thinking_tokens": 0,
+    "latency_s": 2.94,
+    "billed_output_tokens": 447,
+    "cost_usd": 0.00183,
+    "wall_time_s": 0.01
+  },
+  "raw_extraction": {
+    "document_type": "invoice",
+    "legibility": "clear",
+    "vendor": "Sakura Tea Traders B.V.",
+    "invoice_number": "2026/0314",
+    "invoice_date_as_printed": "14-03-2026",
+    "invoice_date": "2026-03-14",
+    "currency": "EUR",
+    "line_items": [
+      {
+        "description": "Sencha Premium, 1 kg bag",
+        "quantity": 8.0,
+        "unit_price": 42.5,
+        "amount": 340.0
+      },
+      {
+        "description": "Matcha ceremonial grade, 100 g tin",
+        "quantity": 30.0,
+        "unit_price": 18.9,
+        "amount": 567.0
+      },
+      {
+        "description": "Bamboo whisk (chasen)",
+        "quantity": 12.0,
+        "unit_price": 7.25,
+        "amount": 87.0
+      },
+      {
+        "description": "Shipping and handling",
+        "quantity": 1.0,
+        "unit_price": 35.0,
+        "amount": 35.0
+      }
+    ],
+    "subtotal": 1029.0,
+    "tax_lines": [
+      {
+        "label": "VAT @ 9%",
+        "amount": 81.63
+      },
+      {
+        "label": "VAT @ 21%",
+        "amount": 25.62
+      }
+    ],
+    "tax_total": 107.25,
+    "total": 1136.25,
+    "notes": null
+  }
+}

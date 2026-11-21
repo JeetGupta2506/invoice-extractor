@@ -1,0 +1,152 @@
+{
+  "file": "L10.pdf",
+  "status": "ok",
+  "needs_review": false,
+  "review_reasons": [],
+  "error": null,
+  "checks": [
+    {
+      "name": "schema_pydantic",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "schema_json",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "totals_reconcile",
+      "passed": true,
+      "severity": "error",
+      "detail": "line items 70320.00 + tax 19689.60 = 90009.60 vs total 90009.60 (diff +0.00, tolerance 0.07)"
+    },
+    {
+      "name": "required_fields",
+      "passed": true,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "name": "subtotal_matches_lines",
+      "passed": true,
+      "severity": "warning",
+      "detail": "sum of rows 70320.00 vs printed subtotal 70320.00"
+    },
+    {
+      "name": "tax_lines_sum",
+      "passed": true,
+      "severity": "warning",
+      "detail": "tax lines 19689.60 vs tax_total 19689.60"
+    },
+    {
+      "name": "line_math",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "date_plausible",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "currency_known",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "name": "scan_resolution",
+      "passed": true,
+      "severity": "warning",
+      "detail": ""
+    }
+  ],
+  "document": {
+    "source_kind": "pdf_scanned",
+    "pages": 1,
+    "has_text_layer": false
+  },
+  "llm": {
+    "model": "gemini-3.5-flash-lite",
+    "thinking_level": "minimal",
+    "prompt_version": "v1",
+    "input_mode": "image",
+    "rounds": [
+      {
+        "round": 1,
+        "cached": true,
+        "problems": [],
+        "input_tokens": 1997,
+        "output_tokens": 544,
+        "thinking_tokens": 0
+      }
+    ],
+    "input_tokens": 1997,
+    "output_tokens": 544,
+    "thinking_tokens": 0,
+    "latency_s": 8.13,
+    "billed_output_tokens": 544,
+    "cost_usd": 0.001959,
+    "wall_time_s": 0.0
+  },
+  "raw_extraction": {
+    "document_type": "invoice",
+    "legibility": "clear",
+    "vendor": "Metro Auto Parts",
+    "invoice_number": "MAP/D/09-0312",
+    "invoice_date_as_printed": "03 Sep 2026",
+    "invoice_date": "2026-09-03",
+    "currency": "INR",
+    "line_items": [
+      {
+        "description": "Brake pad set, front (sedan)",
+        "quantity": 8.0,
+        "unit_price": 1850.0,
+        "amount": 14800.0
+      },
+      {
+        "description": "Air filter element",
+        "quantity": 12.0,
+        "unit_price": 420.0,
+        "amount": 5040.0
+      },
+      {
+        "description": "Wiper blade 20 in (pair)",
+        "quantity": 15.0,
+        "unit_price": 380.0,
+        "amount": 5700.0
+      },
+      {
+        "description": "Engine oil 5W-30, 4 L can",
+        "quantity": 20.0,
+        "unit_price": 1960.0,
+        "amount": 39200.0
+      },
+      {
+        "description": "Coolant concentrate, 1 L",
+        "quantity": 18.0,
+        "unit_price": 310.0,
+        "amount": 5580.0
+      }
+    ],
+    "subtotal": 70320.0,
+    "tax_lines": [
+      {
+        "label": "CGST @ 14%",
+        "amount": 9844.8
+      },
+      {
+        "label": "SGST @ 14%",
+        "amount": 9844.8
+      }
+    ],
+    "tax_total": 19689.6,
+    "total": 90009.6,
+    "notes": null
+  }
+}
